@@ -1,13 +1,43 @@
 package SDA;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.io.LineIterator;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
- * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args ){
+public class App {
+    public static void main(String[] args) throws IOException {
+        File file = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\simpleExample.txt");
 
+        LineIterator fileContent = FileUtils.lineIterator(file, "UTF-8");
+
+        while (fileContent.hasNext()) {
+            System.out.println(fileContent.nextLine());
+        }
+
+
+UserMethod userMethod = new UserMethod();
+        for (User i: userMethod.list()){
+        System.out.println(i);}
+
+
+// druga metoda
+//        File file = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\simpleExample.txt");
+//        FileReader fis = new FileReader(file);
+//        String linia = "";
+//        BufferedReader bfr = new BufferedReader(fis);
+//        while ((linia = bfr.readLine()) != null) {
+//            System.out.println(linia);
+//        }
 
     }
 }
+
