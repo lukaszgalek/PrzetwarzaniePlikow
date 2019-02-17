@@ -29,6 +29,9 @@ protected  static final Logger log = Logger.getLogger(BooksMethod.class.getName(
             }
         }
         books.sort(new BooksComparator());
+
+         File sortedBooks = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\sortedBooks.csv");
+         FileUtils.writeLines(sortedBooks, books);
         return books;
     }
 }
