@@ -15,26 +15,26 @@ import java.util.List;
  */
 public class App {
     public static void main(String[] args) throws IOException {
-        File file = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\simpleExample.txt");
-
-        LineIterator fileContent = FileUtils.lineIterator(file, "UTF-8");
-
-        while (fileContent.hasNext()) {
-            System.out.println(fileContent.nextLine());
-        }
-
-
-UserMethod userMethod = new UserMethod();
-        for (User i: userMethod.list()){
-        System.out.println(i);}
-//userMethod.listy();
-        System.out.println("\n");
-
-        for (User i: userMethod.getKobiety()){
-            System.out.println(i );}
-        System.out.println("\n");
-        for (User i: userMethod.getMezczyzni()){
-            System.out.println(i);}
+//        File file = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\simpleExample.txt");
+//
+//        LineIterator fileContent = FileUtils.lineIterator(file, "UTF-8");
+//
+//        while (fileContent.hasNext()) {
+//            System.out.println(fileContent.nextLine());
+//        }
+//
+//
+//UserMethod userMethod = new UserMethod();
+//        for (User i: userMethod.list()){
+//        System.out.println(i);}
+////userMethod.listy();
+//        System.out.println("\n");
+//
+//        for (User i: userMethod.getKobiety()){
+//            System.out.println(i );}
+//        System.out.println("\n");
+//        for (User i: userMethod.getMezczyzni()){
+//            System.out.println(i);}
 // druga metoda
 //        File file = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\simpleExample.txt");
 //        FileReader fis = new FileReader(file);
@@ -43,6 +43,14 @@ UserMethod userMethod = new UserMethod();
 //        while ((linia = bfr.readLine()) != null) {
 //            System.out.println(linia);
 //        }
+
+
+        BooksMethod booksMethod = new BooksMethod();
+        for (Books i : booksMethod.utworzListe()){
+            System.out.println(i);
+        }
+
+
 
     }
 }
