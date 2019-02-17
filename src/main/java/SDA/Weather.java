@@ -4,14 +4,14 @@ import java.time.LocalDate;
 
 public class Weather {
     private LocalDate Date;
-    private int MaxTemperature;
+    private int maxTemperaturec;
     private double MeanTemperature;
     private int MinTemperature;
 
 
     public Weather(LocalDate date, int maxTemperature, double meanTemperature, int minTemperature) {
         Date = date;
-        MaxTemperature = maxTemperature;
+        maxTemperaturec = maxTemperature;
         MeanTemperature = meanTemperature;
         MinTemperature = minTemperature;
     }
@@ -20,7 +20,7 @@ public class Weather {
     public String toString() {
         return "Weather{" +
                 "Date=" + Date +
-                ", Max Temperature=" + MaxTemperature +
+                ", maxTemperaturec=" + maxTemperaturec +
                 ", MeanTemperature=" + MeanTemperature +
                 ", MinTemperature=" + MinTemperature +
                 '}';
@@ -30,8 +30,8 @@ public class Weather {
         return Date;
     }
 
-    public int getMaxTemperature() {
-        return MaxTemperature;
+    public int getMaxTemperaturec() {
+        return maxTemperaturec;
     }
 
     public double getMeanTemperature() {

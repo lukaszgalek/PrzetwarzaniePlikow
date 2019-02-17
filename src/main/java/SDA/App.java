@@ -7,6 +7,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,13 +46,16 @@ public class App {
 //        }
 
 
-        BooksMethod booksMethod = new BooksMethod();
-        for (Books i : booksMethod.utworzListe()) {
+//        BooksMethod booksMethod = new BooksMethod();
+//        for (Books i : booksMethod.utworzListe()) {
+//            System.out.println(i);
+//        }
+WeatherMethod weatherMethod = new WeatherMethod();
+                for (Weather i : weatherMethod.utworzListe()) {
             System.out.println(i);
         }
-WeatherMethod weatherMethod = new WeatherMethod();
-        System.out.println(weatherMethod.utworzListe());
-
+        System.out.println("---------------------");
+        System.out.println(weatherMethod.pogodaDnia(LocalDate.parse("1948-01-01")));
     }
 }
 
