@@ -27,8 +27,14 @@ public class App {
 UserMethod userMethod = new UserMethod();
         for (User i: userMethod.list()){
         System.out.println(i);}
+//userMethod.listy();
+        System.out.println("\n");
 
-
+        for (User i: userMethod.getKobiety()){
+            System.out.println(i );}
+        System.out.println("\n");
+        for (User i: userMethod.getMezczyzni()){
+            System.out.println(i);}
 // druga metoda
 //        File file = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\simpleExample.txt");
 //        FileReader fis = new FileReader(file);
