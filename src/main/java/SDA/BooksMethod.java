@@ -11,7 +11,8 @@ import java.util.logging.Logger;
 
 public class BooksMethod {
 
-protected  static final Logger log = Logger.getLogger(BooksMethod.class.getName());
+    protected static final Logger log = Logger.getLogger(BooksMethod.class.getName());
+
     public List<Books> utworzListe() throws IOException {
 
         File file = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\books.csv");
@@ -25,13 +26,14 @@ protected  static final Logger log = Logger.getLogger(BooksMethod.class.getName(
             try {
                 books.add(new Books(new Integer(line[0]), line[1], line[2], new Double(line[3]), new Boolean(line[4]),
                         line[5], line[6], new Integer(line[7]), line[8]));
-            } catch (NumberFormatException e) { log.warning("Number");
+            } catch (NumberFormatException e) {
+                log.warning("Number");
             }
         }
         books.sort(new BooksComparator());
 
-         File sortedBooks = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\sortedBooks.csv");
-         FileUtils.writeLines(sortedBooks, books);
+        File sortedBooks = new File("D:\\JAVA\\Zajęcia Java\\PrzetwarzaniePlikow\\src\\main\\resources\\Pliki\\sortedBooks.csv");
+        FileUtils.writeLines(sortedBooks, books);
         return books;
     }
 }

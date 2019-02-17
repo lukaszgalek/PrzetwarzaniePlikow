@@ -46,11 +46,11 @@ public class App {
 
 
         BooksMethod booksMethod = new BooksMethod();
-        for (Books i : booksMethod.utworzListe()){
+        for (Books i : booksMethod.utworzListe()) {
             System.out.println(i);
         }
-
-
+WeatherMethod weatherMethod = new WeatherMethod();
+        System.out.println(weatherMethod.utworzListe());
 
     }
 }
