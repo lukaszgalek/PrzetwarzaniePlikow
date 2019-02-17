@@ -47,8 +47,73 @@ public class WeatherMethod {
             if (data.equals(weather.getDate())) {
                 return weather;
             }
-        }return null;
+        }
+        return null;
     }
 
+
+    public MinMaxResult porownanie(LocalDate dataPierwsza, LocalDate dateDruga) {
+        List<Weather> weathersFromRange = getDateFromRange(dataPierwsza, dateDruga);
+        if (weathersFromRange.isEmpty()) {
+            return null;
+        }
+        int maxTemp = weathersFromRange.get(0).getMaxTemperaturec();
+        int minTemp = weathersFromRange.get(0).getMinTemperature();
+
+        for (Weather weather : weathersFromRange) {
+            if (weather.getMaxTemperaturec() >= maxTemp) {
+                maxTemp = weather.getMaxTemperaturec();
+            }
+            if (weather.getMinTemperature() <= minTemp) {
+                minTemp = weather.getMinTemperature();
+            }
+        }
+
+return new MinMaxResult(minTemp,maxTemp);
+    }
+
+
+
+    private List<Weather> getDateFromRange(LocalDate dateFrom, LocalDate dateTo) {
+        List<Weather> lista = new ArrayList<>();
+
+        for (Weather weather : weathers) {
+            if (weather.getDate().isAfter(dateFrom) && weather.getDate().isBefore(dateTo)) {
+
+                lista.add(weather);
+
+            }
+
+        }
+        return lista;
+    }
+
+    public int iloscDni(int i) {
+        int count = 0;
+        for (Weather weather : weathers) {
+            if (weather.getMeanTemperature() >= i) {
+                ++count;
+            }
+        }
+        return count;
+
+    }
+
+    public int rok() {
+        int najwyzsza = 0;
+        int najcieplejszyRok = 0;
+        for (Weather weather : weathers) {
+            if (weather.getMaxTemperaturec() >= najwyzsza) {
+                najwyzsza = weather.getMaxTemperaturec();
+                najcieplejszyRok = weather.getDate().getYear();
+            }
+        }
+        System.out.println(najwyzsza);
+        return najcieplejszyRok;
+
+    }
 }
+
+
+
 

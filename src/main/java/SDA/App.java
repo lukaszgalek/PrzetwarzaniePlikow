@@ -54,8 +54,19 @@ WeatherMethod weatherMethod = new WeatherMethod();
                 for (Weather i : weatherMethod.utworzListe()) {
             System.out.println(i);
         }
-        System.out.println("---------------------");
+
         System.out.println(weatherMethod.pogodaDnia(LocalDate.parse("1948-01-01")));
+        System.out.println("---------------------");
+        System.out.println(weatherMethod.porownanie(LocalDate.parse("1948-02-01"),LocalDate.parse("1948-09-09")));
+
+
+
+        System.out.println(weatherMethod.iloscDni(20));
+
+
+        System.out.println(weatherMethod.rok());
+
     }
+
 }
 
